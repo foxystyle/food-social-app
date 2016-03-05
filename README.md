@@ -21,7 +21,7 @@ It's open source app for educational purposes only.
 - [ ] Vote show
 - [ ] Vote edit
 - [ ] Vote destroy
-- [ ] Topic create
-- [ ] Topic show
-- [ ] Topic edit
-- [ ] Topic destroy
+- [ ] Tag create
+- [ ] Tag show
+- [ ] Tag edit
+- [ ] Tag destroy
