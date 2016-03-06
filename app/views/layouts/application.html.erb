@@ -10,6 +10,7 @@
 <% flash.each do |message_type, message| %>
   <%= message_type %> : <%= message %> <br>
 <% end %>
+<%= render 'layouts/header' %>
 <%= yield %>
 
 </body>

@@ -3,9 +3,9 @@ This is a simple social app for food lovers.
 It's open source app for educational purposes only.
 
 ## To-dos
-- [ ] User registration
-- [ ] User login (sessions, cookies)
-
+- [x] User registration
+- [x] User login (sessions, cookies)
+- [x] User logout
 - [ ] User show
 - [ ] User edit
 - [ ] User destroy
