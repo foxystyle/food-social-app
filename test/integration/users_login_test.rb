@@ -49,5 +49,15 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", login_path
   end
 
+  test "login (remember)" do
+    log_in_as(@user, remember_me: '1')
+    assert_not_nil cookies['remember_token']
+  end
+
+  test "login (not remember)" do
+    log_in_as(@user, remember_me: '0')
+    assert_nil cookies['remember_token']
+  end
+
 
 end
