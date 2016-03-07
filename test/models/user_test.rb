@@ -86,6 +86,14 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?('')
   end
 
+  # Delete user posts if user is deleted
+  test "user destruction => user posts destruction" do
+    @user.save
+    @user.posts.create!(content: "Test post")
+    assert_difference 'Post.count', -1 do
+      @user.destroy
+    end
+  end
 
 
 end
