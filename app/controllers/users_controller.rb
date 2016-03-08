@@ -50,15 +50,6 @@ class UsersController < ApplicationController
 
     # Before actions
 
-    # Confirm logged user
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Log in required"
-        redirect_to login_path
-      end
-    end
-
     # Confirm the correct user
     def correct_user
       @user = User.find(params[:id])

@@ -17,3 +17,23 @@ most_recent:
   content: "RIGHT NOW!"
   created_at: <%= Time.zone.now %>
   user: kunok
+
+cold:
+  content: "I am freezing to death"
+  created_at: <%= 7.months.ago %>
+  user: anna
+
+fats:
+  content: "Avoid bad fats"
+  created_at: <%= 8.months.ago %>
+  user: anna
+
+smoke:
+  content: "Smoke is in the air"
+  created_at: <%= 2.months.ago %>
+  user: mary
+
+sleep:
+  content: "I don't really sleep at night"
+  created_at: <%= 7.months.ago %>
+  user: mary

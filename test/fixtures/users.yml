@@ -1,9 +1,24 @@
 kunok:
   name: Kunok San
-  email: kunok@dev.com
+  email: kunok@test.com
   password_digest: <%= User.digest('password') %>
 
 john:
   name: John Wearh
   email: johnwearh@cool.com
+  password_digest: <%= User.digest('password') %>
+
+lana:
+  name: Lana Smith
+  email: lana1985@test.com
+  password_digest: <%= User.digest('password') %>
+
+mary:
+  name: Mary Jane
+  email: maryjane@test.com
+  password_digest: <%= User.digest('password') %>
+
+anna:
+  name: Anna Chan
+  email: annalove@test.com
   password_digest: <%= User.digest('password') %>
