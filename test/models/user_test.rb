@@ -95,5 +95,17 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  # About tests
+
+  test "about max length" do
+    @user.about = 'a' * 201
+    assert_not @user.valid?
+  end
+
+  test "about can be blank" do
+    @user.about = " "
+    assert @user.valid?
+  end
+
 
 end

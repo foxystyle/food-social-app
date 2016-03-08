@@ -26,6 +26,11 @@ class User < ActiveRecord::Base
     length: {minimum: 6},
     allow_nil: true
 
+  # About
+  validates :about,
+    length: {maximum: 200},
+    allow_nil: true
+
 
   # Return the hash digest of the given string
   def User.digest(string)

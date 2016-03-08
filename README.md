@@ -8,8 +8,6 @@ It's open source app for educational purposes only.
 - Posts => In progress
 - Votes => Pending
 - Comments => Pending
-- Recipes/Guides => Pending
-- Requests/Questions => Pending
 - Following/Link/Friendship => Pending
 - Messages => Maybe
 - ...and more to come

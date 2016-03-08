@@ -13,6 +13,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     patch user_path(@user), user: {
       name: "",
       email: "invalid@email",
+      about: "",
       password: "foo",
       password_confirmation: "bar"
     }
@@ -28,6 +29,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     patch user_path(@user), user: {
       name: name,
       email: email,
+      about: "",
       password: "",
       password_confirmation: ""
     }
@@ -37,6 +39,5 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_equal name, @user.name
     assert_equal email, @user.email
   end
-
 
 end
