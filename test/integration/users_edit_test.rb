@@ -13,7 +13,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     patch user_path(@user), user: {
       name: "",
       email: "invalid@email",
-      about: "",
+      about: "a" * 201,
       password: "foo",
       password_confirmation: "bar"
     }

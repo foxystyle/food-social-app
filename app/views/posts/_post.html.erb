@@ -1,6 +1,6 @@
 <div style="border: 1px solid #000; max-width: 400px;">
-Post ID: <%= post.id %> <br>
-Post user: <%= link_to post.user.name, post.user %>
+<strong>Post ID:</strong> <%= post.id %> <br>
+<strong>Post user:</strong> <%= link_to post.user.name, post.user %>
   <div class="post" style="color: #666; padding: 10px; margin: 5px; border: 1px solid #aaa">
     <i>
       <%= post.content %>
@@ -8,7 +8,14 @@ Post user: <%= link_to post.user.name, post.user %>
   </div>
 Posted <%= time_ago_in_words(post.created_at) %> ago.
 <% if current_user?(post.user) %>
-  <%= link_to "delete", post, method: :delete, data: { confirm: "Really?" } %>
+  <%= link_to "delete", post, method: :delete %>,
+  <%= link_to "edit", edit_post_path %>
+<% end %>
+<br> <strong>Edit history:</strong>
+<% @edits.each do |e| %>
+  <div style="color: green">
+    <%= e.content %>
+  </div>
 <% end %>
 </div>
 <br>

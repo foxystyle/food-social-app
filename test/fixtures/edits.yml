@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: i like food
+  post: food
+
+two:
+  content: i am hungry
+  post_id: food
