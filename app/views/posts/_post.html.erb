@@ -11,11 +11,5 @@ Posted <%= time_ago_in_words(post.created_at) %> ago.
   <%= link_to "delete", post, method: :delete %>,
   <%= link_to "edit", edit_post_path %>
 <% end %>
-<br> <strong>Edit history:</strong>
-<% @edits.each do |e| %>
-  <div style="color: green">
-    <%= e.content %>
-  </div>
-<% end %>
 </div>
 <br>
