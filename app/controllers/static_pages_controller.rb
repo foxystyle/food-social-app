@@ -4,7 +4,9 @@ class StaticPagesController < ApplicationController
     if logged_in?
       @user = current_user
       @post = current_user.posts.build
+
     end
+    @all_posts = Post.all
   end
 
 

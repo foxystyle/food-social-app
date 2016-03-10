@@ -10,3 +10,11 @@
     or
     <%= link_to "Log in", login_path %>.
 <% end %>
+
+<hr>
+
+<% @all_posts.each do |p, a = 0| %>
+  <% a += 1 %>
+  <%= p.inspect %>
+  <span style="color: red"><%= a %></span>
+<% end %>
