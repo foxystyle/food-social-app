@@ -26,7 +26,9 @@ class PostsController < ApplicationController
       content: @content,
       post_id: @post.id
     )
+    @post.edited = true
     if @post.update_attributes(post_params) && @edit.save
+      flash[:test] = @post.edited
       flash[:success] = "Edit successful"
       redirect_to @post
     else

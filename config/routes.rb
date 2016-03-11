@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'votes/create'
+
   root 'static_pages#index'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'

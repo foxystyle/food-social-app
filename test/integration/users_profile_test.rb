@@ -19,4 +19,10 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_select 'div.post', count: 0
   end
 
+ test "user profile links" do
+   get user_path @user
+   assert_template 'users/show'
+   assert_select 'a[href=?]', edit_user_path
+ end
+
 end

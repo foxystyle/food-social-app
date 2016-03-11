@@ -6,10 +6,13 @@
       <%= post.content %>
     </i>
   </div>
-Posted <%= time_ago_in_words(post.created_at) %> ago.
+Posted <%= time_ago_in_words(post.created_at) %> ago. <br>
+<% if post.edited %>
+  Post has been edited <%= time_ago_in_words(post.updated_at) %> ago. <br>
+<% end %>
 <% if current_user?(post.user) %>
   <%= link_to "delete", post, method: :delete %>,
-  <%= link_to "edit", edit_post_path %>
+  <%= link_to "edit", edit_post_path(post)%>
 <% end %>
 </div>
 <br>

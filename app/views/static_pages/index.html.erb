@@ -13,8 +13,7 @@
 
 <hr>
 
-<% @all_posts.each do |p, a = 0| %>
-  <% a += 1 %>
+<% @all_posts.each_with_index do |p, i = 1| %>
   <%= p.inspect %>
-  <span style="color: red"><%= a %></span>
+  <span style="color: red"><%= i %></span>
 <% end %>
