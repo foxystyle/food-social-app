@@ -13,7 +13,4 @@
 
 <hr>
 
-<% @all_posts.each_with_index do |p, i = 1| %>
-  <%= p.inspect %>
-  <span style="color: red"><%= i %></span>
-<% end %>
+<%= render @all_posts %>

@@ -3,13 +3,14 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @votes = current_post.votes || 'none'
   end
 
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post created!"
-      redirect_to root_url
+      redirect_to @post
     else
       render 'static_pages/index'
     end
@@ -42,6 +43,7 @@ class PostsController < ApplicationController
     flash[:success] = "Post deleted"
     redirect_to request.referrer || root_url
   end
+
 
   private
 

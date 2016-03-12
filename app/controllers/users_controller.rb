@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
+    @post = current_user.posts.build if logged_in?
   end
 
   def edit
