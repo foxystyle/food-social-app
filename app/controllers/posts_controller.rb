@@ -1,9 +1,16 @@
 class PostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :update]
 
+  def index
+    if logged_in?
+      @user = current_user
+      @post = current_user.posts.build
+    end
+    @all_posts = Post.all
+  end
+
   def show
     @post = Post.find(params[:id])
-    @votes = current_post.votes || 'none'
   end
 
   def create
@@ -42,6 +49,12 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:success] = "Post deleted"
     redirect_to request.referrer || root_url
+  end
+
+  def upvote
+    @post = Post.find(65)
+    @post.liked_by current_user
+    redirect_to @post
   end
 
 

@@ -14,5 +14,7 @@
     <%= link_to "delete", post, method: :delete %>,
     <%= link_to "edit", edit_post_path(post)%>
   <% end %>
+  <%= link_to "upvote", post_upvote_path(post), method: :put %>
+  <%= post.votes_for.size %>
 </div>
 <br>

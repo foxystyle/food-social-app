@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
 
   # Relations
   has_many :posts, dependent: :destroy
-  has_many :votes
 
   before_save {
     self.email = email.downcase
