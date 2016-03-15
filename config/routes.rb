@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :posts do
-    put 'upvote', to: 'posts#upvote'
+    member do
+      put 'upvote', to: 'posts#upvote'
+    end
   end
 end
