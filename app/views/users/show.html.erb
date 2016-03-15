@@ -9,7 +9,7 @@
   <%= @user.about %>
 <% end %>
 <hr>
-<%= render 'shared/post_form' if logged_in?  %>
+<%= render 'shared/post_form' if logged_in? && current_user == @user  %>
 <% if @user.posts.any? %>
   <%= render @posts %>
 <% else %>

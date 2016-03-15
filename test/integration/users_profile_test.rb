@@ -25,4 +25,11 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
    assert_select 'a[href=?]', edit_user_path
  end
 
+ test "shouldn't show post form for foreign users" do
+   log_in_as @other_user
+   get user_path @user
+   assert_template 'users/show'
+   assert_select 'textarea', count: 0
+ end
+
 end
