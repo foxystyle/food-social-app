@@ -52,7 +52,7 @@ class PostsController < ApplicationController
   end
 
   def upvote
-    @post = Post.find(65)
+    @post = Post.find(params[:id])
     @post.liked_by current_user
     redirect_to @post
   end
