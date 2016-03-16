@@ -6,5 +6,5 @@ This is a simple social app for food lovers. This is project for educational and
 
 - Users => DONE
 - Posts => DONE
-- Votes => In progress
-- Comments => Pending
+- Votes => DONE
+- Comments => in progress
