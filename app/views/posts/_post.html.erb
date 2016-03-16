@@ -15,9 +15,11 @@
     <%= link_to "edit", edit_post_path(post)%>
   <% end %>
   <% if logged_in? %>
-    <%= link_to "upvote", upvote_post_path(post), method: :put %>
-    <%= link_to "downvote", downvote_post_path(post), method: :put %>
+    <%= link_to "upvote", upvote_post_path(post), class: 'vote', method: :put, method: :put, remote: true %>
+    <%#= link_to "downvote", downvote_post_path(post), method: :put %>
   <% end %>
-  <%= post.get_likes.size - post.get_downvotes.size %>
+  <span class="votes-count" data-id="<%= post.id %>">
+    <%= post.get_likes.size %>
+  </span> users like this.
 </div>
 <br>
