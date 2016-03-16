@@ -14,7 +14,10 @@
     <%= link_to "delete", post, method: :delete %>,
     <%= link_to "edit", edit_post_path(post)%>
   <% end %>
-  <%= link_to "upvote", upvote_post_path(post), method: :put %>
-  <%= post.votes_for.size %>
+  <% if logged_in? %>
+    <%= link_to "upvote", upvote_post_path(post), method: :put %>
+    <%= link_to "downvote", downvote_post_path(post), method: :put %>
+  <% end %>
+  <%= post.get_likes.size - post.get_downvotes.size %>
 </div>
 <br>
