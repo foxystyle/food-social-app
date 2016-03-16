@@ -61,12 +61,15 @@ class PostsController < ApplicationController
     end
   end
 
-  def downvote
+  def unvote
     @post = Post.find(params[:id])
-    @post.downvote_from current_user
-    redirect_to request.referrer || root_url
+    @post.unliked_by current_user
+    if request.xhr?
+      render json: { count: @post.get_likes.size, id: params[:id] }
+    else
+      redirect_to @post
+    end
   end
-
 
   private
 

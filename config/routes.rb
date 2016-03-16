@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :posts do
     member do
       put 'upvote', to: 'posts#upvote'
-      put 'downvote', to: 'posts#downvote'
+      put 'unvote', to: 'posts#unvote'
     end
   end
 end
