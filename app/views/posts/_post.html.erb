@@ -15,7 +15,7 @@
     <%= link_to "edit", edit_post_path(post)%>
   <% end %>
   <% if logged_in? %>
-    <% if post.liked_by current_user %>
+    <% if current_user.voted_for? post %>
       <%= link_to "Dislike", unvote_post_path(post), class: 'vote', method: :put, remote: true, data: { toggle_text: 'Like', toggle_href: upvote_post_path(post), id: post.id } %>
     <% else %>
       <%= link_to "Like", upvote_post_path(post), class: 'vote', method: :put, remote: true, data: { toggle_text: 'Dislike', toggle_href: unvote_post_path(post), id: post.id } %>

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
+  acts_as_voter
   # Valid email regex
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -25,12 +26,10 @@ class User < ActiveRecord::Base
     presence: true,
     length: {minimum: 6},
     allow_nil: true
-
   # About
   validates :about,
     length: {maximum: 200},
     allow_nil: true
-
 
   # Return the hash digest of the given string
   def User.digest(string)
@@ -61,8 +60,5 @@ class User < ActiveRecord::Base
   def forget
     update_attribute :remember_digest, nil
   end
-
-
-
 
 end
