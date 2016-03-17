@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 20160317164346) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
-ActiveRecord::Schema.define(version: 20160315114833) do
-
   create_table "edits", force: :cascade do |t|
     t.text     "content"
     t.integer  "post_id"

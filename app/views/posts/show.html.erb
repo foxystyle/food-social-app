@@ -1,9 +1,14 @@
 <%= render @post %>
-<%= form_for [@post, @comment] do |f| %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
+<% if logged_in? %>
+  <%= form_for [@post, @comment] do |f| %>
+    <%= f.text_area :content %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
 <% @post.comments.each do |comment| %>
-   <%= comment.user %> <br>
-   <%= comment.content %> <br>
+   <div style="margin: 5px 0; background: rgba(123,213,231, 0.6); max-width: 400px; border: 1px solid #54c2ba; ">
+     <strong>Comment:</strong> <br>
+     <%= comment.content %> <br>
+     <%= link_to "delete", comment, method: :delete  %>
+   </div>
 <% end %>

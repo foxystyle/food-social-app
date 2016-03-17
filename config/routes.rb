@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  resources :comments
   resources :users
   resources :posts do
     resources :comments
