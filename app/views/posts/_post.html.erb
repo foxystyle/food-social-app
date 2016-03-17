@@ -30,5 +30,8 @@
   <div class="">
     Comments: <%= post.comments.count %>
   </div>
+  <span class="votes-count" data-id="<%= post.id %>">
+    <%= post.get_likes.size %>
+  </span>
 </div>
 <br>
