@@ -1,0 +1,9 @@
+<%= render @post %>
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>
+<% @post.comments.each do |comment| %>
+   <%= comment.user %> <br>
+   <%= comment.content %> <br>
+<% end %>

@@ -1,0 +1,34 @@
+<div style="border: 1px solid #000; max-width: 400px;">
+<strong>Post ID:</strong> <%= link_to post.id, post %> <br>
+<strong>Post user:</strong> <%= link_to post.user.name, post.user %>
+  <div class="post" style="color: #666; padding: 10px; margin: 5px; border: 1px solid #aaa">
+    <i>
+      <%= post.content %>
+    </i>
+  </div>
+  Posted <%= time_ago_in_words(post.created_at) %> ago. <br>
+  <% if post.edited %>
+    Post has been edited <%= time_ago_in_words(post.updated_at) %> ago. <br>
+  <% end %>
+  <% if current_user?(post.user) %>
+    <%= link_to "delete", post, method: :delete %>,
+    <%= link_to "edit", edit_post_path(post)%>
+  <% end %>
+  <% if logged_in? %>
+    <% if current_user.voted_for? post %>
+      <%= link_to "Dislike", unvote_post_path(post), class: 'vote', method: :put, remote: true, data: { toggle_text: 'Like', toggle_href: upvote_post_path(post), id: post.id } %>
+    <% else %>
+      <%= link_to "Like", upvote_post_path(post), class: 'vote', method: :put, remote: true, data: { toggle_text: 'Dislike', toggle_href: unvote_post_path(post), id: post.id } %>
+    <% end %>
+  <% end %>
+  <div class="">
+    Votes:
+    <span class="votes-count" data-id="<%= post.id %>">
+      <%= post.get_likes.size %>
+    </span>
+  </div>
+  <div class="">
+    Comments: <%= post.comments.count %>
+  </div>
+</div>
+<br>

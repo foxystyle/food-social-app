@@ -1,0 +1,17 @@
+<h1>User profile</h1>
+<b>Name:</b> <%= @user.name %> <br>
+<b>Email:</b> <%= @user.email %> <br>
+<b>ID:</b> <%= @user.id %> <br>
+<b>About:</b>
+<% if @user.about.blank? %>
+  <span style="color: gray">Feel free to <%= link_to "tell", edit_user_path %> something about yourself.</span>
+<% else %>
+  <%= @user.about %>
+<% end %>
+<hr>
+<%= render 'shared/post_form' if logged_in? && current_user == @user  %>
+<% if @user.posts.any? %>
+  <%= render @posts %>
+<% else %>
+  <i>No posts.</i>
+<% end %>
