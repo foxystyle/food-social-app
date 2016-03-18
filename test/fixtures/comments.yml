@@ -1,11 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 
-  post_id: 
-  content: MyText
-
-two:
-  user_id: 
-  post_id: 
-  content: MyText
+comment:
+  user: kunok
+  post: food
+  content: test comment

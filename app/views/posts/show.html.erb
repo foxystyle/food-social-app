@@ -6,8 +6,9 @@
   <% end %>
 <% end %>
 <% @post.comments.each do |comment| %>
-   <div style="margin: 5px 0; background: rgba(123,213,231, 0.6); max-width: 400px; border: 1px solid #54c2ba; ">
+   <div class="comment" style="margin: 5px 0; background: rgba(123,213,231, 0.6); max-width: 400px; border: 1px solid #54c2ba; ">
      <strong>Comment:</strong> <br>
+     <%= @post.comments.first.content %>
      <%= comment.content %> <br>
      <%= link_to "delete", comment, method: :delete  %>
    </div>
