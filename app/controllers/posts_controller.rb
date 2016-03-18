@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
-    @comment = @post.comments.build if logged_in?
+    @comment = Comment.new if logged_in?
   end
 
   def create
